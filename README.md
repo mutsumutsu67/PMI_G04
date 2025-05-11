@@ -15,9 +15,9 @@
 #### リハビリ記録：一週間分のバイタルデータ。
 #### 生活観察　　：一週間分の生活観察記録。
 ## 3,実行について
-### 1,Data download (yaml , patient_data*.*)
-### 2,Difyを立ち上げ後、yamlを読込。workflowとして取り込まれます。
-### 3.DifyのLLM APIの設定
-### 4,AIエージェントの実行(inputにpatient_dataをfileとして入力。）
+###   1,Data download (yaml , patient_data*.*)
+###   2,Difyを立ち上げ後、yamlを読込。workflowとして取り込まれます。
+###   3.DifyのLLM APIの設定
+###   4,AIエージェントの実行(inputにpatient_dataをfileとして入力。）
 ###  
 ###
