@@ -1,0 +1,1131 @@
+app:
+  description: 介護現場の医療スタッフの負担軽減と情報共有を目的に作成しています。
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 異種スタッフ間ナレッジシェアrag
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.0.8@420e755f870062b3da528617d2c0439a599ce1cbbb00645492c3bdb2b360afb6
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/cohere:0.0.8@3dcfb5aa3cf8187b5aa1db48cc3e12326d2211d6e707fbde8031f23cc9eb6315
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.0.15@5f610705111ac49d93c4ea5eaac690abaeb3b4a87599c48e5165b549b4c47f10
+kind: app
+version: 0.2.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1745906141667-source-1745907562571-target
+      source: '1745906141667'
+      sourceHandle: source
+      target: '1745907562571'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1745906141667-source-1745907902082-target
+      source: '1745906141667'
+      sourceHandle: source
+      target: '1745907902082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1745906141667-source-1745908163022-target
+      source: '1745906141667'
+      sourceHandle: source
+      target: '1745908163022'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1745906147742-source-1745908417534-target
+      source: '1745906147742'
+      sourceHandle: source
+      target: '1745908417534'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1745907562571-source-1745908417534-target
+      source: '1745907562571'
+      sourceHandle: source
+      target: '1745908417534'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1745907902082-source-1745908417534-target
+      source: '1745907902082'
+      sourceHandle: source
+      target: '1745908417534'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1745908163022-source-1745908417534-target
+      source: '1745908163022'
+      sourceHandle: source
+      target: '1745908417534'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1745912600754-source-1745912729130-target
+      source: '1745912600754'
+      sourceHandle: source
+      target: '1745912729130'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1745908417534-source-1745912729130-target
+      source: '1745908417534'
+      sourceHandle: source
+      target: '1745912729130'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1745912729130-source-1745912825775-target
+      source: '1745912729130'
+      sourceHandle: source
+      target: '1745912825775'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1745912729130-source-1745913234244-target
+      source: '1745912729130'
+      sourceHandle: source
+      target: '1745913234244'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1745912729130-source-1745913324832-target
+      source: '1745912729130'
+      sourceHandle: source
+      target: '1745913324832'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1745906141667-source-1745912600754-target
+      source: '1745906141667'
+      sourceHandle: source
+      target: '1745912600754'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1745912825775-source-1745918233281-target
+      source: '1745912825775'
+      sourceHandle: source
+      target: '1745918233281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1745912932533-source-1745918233281-target
+      source: '1745912932533'
+      sourceHandle: source
+      target: '1745918233281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1745913234244-source-1745918233281-target
+      source: '1745913234244'
+      sourceHandle: source
+      target: '1745918233281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1745913324832-source-1745918233281-target
+      source: '1745913324832'
+      sourceHandle: source
+      target: '1745918233281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: end
+      id: 1745918233281-source-1745913798333-target
+      source: '1745918233281'
+      sourceHandle: source
+      target: '1745913798333'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1745975219737-source-1745906147742-target
+      source: '1745975219737'
+      sourceHandle: source
+      target: '1745906147742'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: knowledge-retrieval
+      id: 1745975720543-source-1745975219737-target
+      source: '1745975720543'
+      sourceHandle: source
+      target: '1745975219737'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1745906141667-source-1745975720543-target
+      source: '1745906141667'
+      sourceHandle: source
+      target: '1745975720543'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: knowledge-retrieval
+      id: 1745912729130-source-1746947695275-target
+      source: '1745912729130'
+      sourceHandle: source
+      target: '1746947695275'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1746947695275-source-1745912932533-target
+      source: '1746947695275'
+      sourceHandle: source
+      target: '1745912932533'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: 患者情報を入れてください。
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: patient_data
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: patient_data
+      height: 116
+      id: '1745906141667'
+      position:
+        x: 173.5920217798502
+        y: -43.09762571360583
+      positionAbsolute:
+        x: 173.5920217798502
+        y: -43.09762571360583
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745975219737'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 7c8a6ca0-6333-4e5b-8a8c-56b79c279e9d
+          role: system
+          text: "あなたは介護・医療チームの一員として働くプロフェッショナルな看護師AIです。  \n目的は、利用者の状態に関する情報をもとに、「医師が的確な判断を下せるよう」、看護師の視点から整理・要約し、ナレッジまたは推論をもとに情報提供を行うことです。\n"
+        - id: fab8a25b-e03e-42ac-bd50-c4cb0e07a2c8
+          role: user
+          text: "以下は患者の観察記録および生活情報です。この情報をもとに、看護師として医師に報告すべき点を整理し、必要なケアの提案があれば提示してください。\n\
+            \n【目的】医師が判断しやすいように、看護師として観察・評価・提案を行ってください。\n---\n\n## \U0001F9E0 あなたの仕事のステップ\n\
+            \n### 【ステップ1】質問の再構成（Rephrase）  \nユーザーの質問が曖昧な場合は、医師の臨床判断につながるよう**具体的な専門的問い**に整理し直してください。\n\
+            \n---\n\n### 【ステップ2】構造データの要約（看護師の視点で）  \n以下のような情報がある場合、看護師として次の観点で**医師が求める判断材料**を抽出・要約してください：\n\
+            - ADL、排泄、食事、睡眠、表情、訴え、会話反応の変化\n- 疲労、せん妄傾向、脱水リスク、便秘傾向、栄養状態の不良など\n\n---\n\
+            \n### 【ステップ3】ナレッジベース（RAG）から情報検索  \n必ずまず、**RAG（知識ベース）から該当情報を検索してください。**\n\
+            \n- 該当があれば、**ナレッジの要点を引用して出力**してください。\n- 該当がない場合は、**推論で回答しても構いませんが、その旨を明記してください。**\n\
+            \n---\n\n## \U0001F4DD 出力テンプレート（医師向け報告形式）\n\n> **［看護師報告］**  \n> 利用者は現在、〇〇の状態にあり、△△の変化が見られる。\
+            \  \n> **〔出典：ナレッジベースより〕□□という対応が推奨されている。**  \n> または  \n> **〔出典なし：推論による判断〕症状から考えられる対応は◯◯と考えられるが、根拠情報は確認できなかったため、医師の判断を仰ぎたい。**\n\
+            \n---\n\n## ✅ 注意事項\n- **RAGからの情報を常に優先**してください。\n- 推論回答を行う際は、**必ず「ナレッジに該当なし・推論による」と記載**してください。\n\
+            - あなたの出力は、医師・他職種が記録・共有・判断に使えるよう、簡潔かつ専門的でなければなりません。\n\n【情報】以下のJSONを読み込んでください。\n\
+            JSON : {{#1745906141667.patient_data#}}\nRAG : {{#context#}}"
+        - id: 5bd905ee-5ff2-48a7-badb-78143ba88f14
+          role: assistant
+          text: ''
+        selected: false
+        title: LLM_看護師
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745906147742'
+      position:
+        x: 993.4960428560094
+        y: 220.84564714161064
+      positionAbsolute:
+        x: 993.4960428560094
+        y: 220.84564714161064
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 70a72966-3852-441d-954c-154812868ed3
+          role: system
+          text: あなたは優秀な介護士です。多くの老人の介護に携わってきました。
+        - id: 5c618277-5279-4009-8354-355e6c20fd7a
+          role: user
+          text: '{{#1745906141667.patient_data#}}に対して介護士の視点で意見をください。'
+        selected: false
+        title: LLM＿介護士
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745907562571'
+      position:
+        x: 459.1776809410143
+        y: 260.01041412353516
+      positionAbsolute:
+        x: 459.1776809410143
+        y: 260.01041412353516
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 72cda7c8-2694-4ff4-80ac-a5bba446d34d
+          role: system
+          text: あなたは優秀な作業療法士です。
+        - id: 2bcb1e11-7cc9-445b-94b7-fc181df67f91
+          role: user
+          text: '{{#1745906141667.patient_data#}}に対して、作業療法士としての見解をしてください。'
+        selected: false
+        title: LLM_作業療法士
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745907902082'
+      position:
+        x: 459.1776809410143
+        y: 371.64874892463376
+      positionAbsolute:
+        x: 459.1776809410143
+        y: 371.64874892463376
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: d4a67b55-a39a-428b-a320-d1e58249898d
+          role: system
+          text: あなたは優秀なケアマネジャーです。定期カンファレンスの為に情報を確認しています。
+        - id: 7c2504cb-c78f-403f-a83a-f26a269f7445
+          role: user
+          text: /{{#1745906141667.patient_data#}}に対してケアマネジャーとしての見解を出してください。
+        selected: false
+        title: LLM_ケアマネ
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745908163022'
+      position:
+        x: 459.1776809410143
+        y: 477.2534704797064
+      positionAbsolute:
+        x: 459.1776809410143
+        y: 477.2534704797064
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: bc743fea-5c96-49fa-ac03-1943f859d01b
+          role: system
+          text: あなたは介護現場に優秀な医者です。介護現場での多くの知見を持ち合わせています。
+        - id: d57f1635-020b-4940-bd98-bea7535509c0
+          role: user
+          text: '介護の患者の状況を看護士、介護士、理学療法士、ケアマネージャのヒアリングしました。医者としての今後の介護方針を作成してください。総合的な判断と各役割に対する指示をしてください。
+
+            ## 看護士の見解{{#1745906147742.text#}}
+
+            ## 介護士の見解 {{#1745907562571.text#}}
+
+            ## 理学療法士の見解 {{#1745907902082.text#}}
+
+            ## ケアマネージャの見解 {{#1745908163022.text#}}
+
+            '
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: LLM_医師
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1745908417534'
+      position:
+        x: 1276.0183284115158
+        y: 312.9149092828248
+      positionAbsolute:
+        x: 1276.0183284115158
+        y: 312.9149092828248
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: '%Y-%m-%d %H:%M:%S'
+          form: form
+          human_description:
+            en_US: Time format in strftime standard.
+            ja_JP: Time format in strftime standard.
+            pt_BR: Time format in strftime standard.
+            zh_Hans: strftime 标准的时间格式。
+          label:
+            en_US: Format
+            ja_JP: Format
+            pt_BR: Format
+            zh_Hans: 格式
+          llm_description: null
+          max: null
+          min: null
+          name: format
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: UTC
+          form: form
+          human_description:
+            en_US: Timezone
+            ja_JP: Timezone
+            pt_BR: Timezone
+            zh_Hans: 时区
+          label:
+            en_US: Timezone
+            ja_JP: Timezone
+            pt_BR: Timezone
+            zh_Hans: 时区
+          llm_description: null
+          max: null
+          min: null
+          name: timezone
+          options:
+          - label:
+              en_US: UTC
+              ja_JP: UTC
+              pt_BR: UTC
+              zh_Hans: UTC
+            value: UTC
+          - label:
+              en_US: America/New_York
+              ja_JP: America/New_York
+              pt_BR: America/New_York
+              zh_Hans: 美洲/纽约
+            value: America/New_York
+          - label:
+              en_US: America/Los_Angeles
+              ja_JP: America/Los_Angeles
+              pt_BR: America/Los_Angeles
+              zh_Hans: 美洲/洛杉矶
+            value: America/Los_Angeles
+          - label:
+              en_US: America/Chicago
+              ja_JP: America/Chicago
+              pt_BR: America/Chicago
+              zh_Hans: 美洲/芝加哥
+            value: America/Chicago
+          - label:
+              en_US: America/Sao_Paulo
+              ja_JP: America/Sao_Paulo
+              pt_BR: América/São Paulo
+              zh_Hans: 美洲/圣保罗
+            value: America/Sao_Paulo
+          - label:
+              en_US: Asia/Shanghai
+              ja_JP: Asia/Shanghai
+              pt_BR: Asia/Shanghai
+              zh_Hans: 亚洲/上海
+            value: Asia/Shanghai
+          - label:
+              en_US: Asia/Ho_Chi_Minh
+              ja_JP: Asia/Ho_Chi_Minh
+              pt_BR: Ásia/Ho Chi Minh
+              zh_Hans: 亚洲/胡志明市
+            value: Asia/Ho_Chi_Minh
+          - label:
+              en_US: Asia/Tokyo
+              ja_JP: Asia/Tokyo
+              pt_BR: Asia/Tokyo
+              zh_Hans: 亚洲/东京
+            value: Asia/Tokyo
+          - label:
+              en_US: Asia/Dubai
+              ja_JP: Asia/Dubai
+              pt_BR: Asia/Dubai
+              zh_Hans: 亚洲/迪拜
+            value: Asia/Dubai
+          - label:
+              en_US: Asia/Kolkata
+              ja_JP: Asia/Kolkata
+              pt_BR: Asia/Kolkata
+              zh_Hans: 亚洲/加尔各答
+            value: Asia/Kolkata
+          - label:
+              en_US: Asia/Seoul
+              ja_JP: Asia/Seoul
+              pt_BR: Asia/Seoul
+              zh_Hans: 亚洲/首尔
+            value: Asia/Seoul
+          - label:
+              en_US: Asia/Singapore
+              ja_JP: Asia/Singapore
+              pt_BR: Asia/Singapore
+              zh_Hans: 亚洲/新加坡
+            value: Asia/Singapore
+          - label:
+              en_US: Europe/London
+              ja_JP: Europe/London
+              pt_BR: Europe/London
+              zh_Hans: 欧洲/伦敦
+            value: Europe/London
+          - label:
+              en_US: Europe/Berlin
+              ja_JP: Europe/Berlin
+              pt_BR: Europe/Berlin
+              zh_Hans: 欧洲/柏林
+            value: Europe/Berlin
+          - label:
+              en_US: Europe/Moscow
+              ja_JP: Europe/Moscow
+              pt_BR: Europe/Moscow
+              zh_Hans: 欧洲/莫斯科
+            value: Europe/Moscow
+          - label:
+              en_US: Australia/Sydney
+              ja_JP: Australia/Sydney
+              pt_BR: Australia/Sydney
+              zh_Hans: 澳大利亚/悉尼
+            value: Australia/Sydney
+          - label:
+              en_US: Pacific/Auckland
+              ja_JP: Pacific/Auckland
+              pt_BR: Pacific/Auckland
+              zh_Hans: 太平洋/奥克兰
+            value: Pacific/Auckland
+          - label:
+              en_US: Africa/Cairo
+              ja_JP: Africa/Cairo
+              pt_BR: Africa/Cairo
+              zh_Hans: 非洲/开罗
+            value: Africa/Cairo
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        params:
+          format: ''
+          timezone: ''
+        provider_id: time
+        provider_name: time
+        provider_type: builtin
+        selected: false
+        title: Current Time
+        tool_configurations:
+          format: '%Y-%m-%d %H:%M:%S'
+          timezone: Asia/Tokyo
+        tool_description: A tool for getting the current time.
+        tool_label: Current Time
+        tool_name: current_time
+        tool_parameters: {}
+        type: tool
+      height: 114
+      id: '1745912600754'
+      position:
+        x: 459.1776809410143
+        y: -106.74652952029362
+      positionAbsolute:
+        x: 459.1776809410143
+        y: -106.74652952029362
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 変数集約器
+        type: variable-aggregator
+        variables:
+        - - '1745908417534'
+          - text
+        - - '1745912600754'
+          - text
+        - - '1745908163022'
+          - text
+        - - '1745907902082'
+          - text
+        - - '1745907562571'
+          - text
+        - - '1745906147742'
+          - text
+      height: 216
+      id: '1745912729130'
+      position:
+        x: 1542.5431138025767
+        y: 68.45514428718741
+      positionAbsolute:
+        x: 1542.5431138025767
+        y: 68.45514428718741
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: b8ed65cc-19bf-4eec-9603-ea6ff729a78b
+          role: system
+          text: あなたは、優秀な看護師です。介護に関して様々な知識を保有しています。常に患者さんに寄り添い、医療の知識を活用して適切な対応して頂ける方です。
+        - id: 54f0160f-ea3d-4880-9dbf-dbbc3d9a438e
+          role: user
+          text: '
+
+            定期カンファレンスは終了し、関係者の意見が出そろいました。医師の指示に沿って介護患者さんへの看護師として、今週のケア方針をまとめてください。本日の状況も含めて季節を考慮し、具体的な内容にしてください。
+
+            医師の指示：{{#1745908417534.text#}}
+
+            本日：{{#1745912600754.text#}}'
+        selected: false
+        title: LLM_看護師2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745912825775'
+      position:
+        x: 2044.327413090953
+        y: 128.77638500039657
+      positionAbsolute:
+        x: 2044.327413090953
+        y: 128.77638500039657
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1746947695275'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: d722e33f-aeb6-4984-90de-616dfc17efc0
+          role: system
+          text: あなたは優秀な介護士です。多くの老人の介護に携わってきました。介護される方のまじかに接していて、多くの感謝をされています。
+        - id: 2aa5feb9-2b98-4b02-b9e2-37e0e8c58d20
+          role: user
+          text: "定期カンファレンスは終了し、関係者の意見が出そろいました。医師の指示に沿って介護患者さんへの介護士として、今週のケア方針をまとめてください。本日の状況も含めて季節を考慮し、具体的な内容にしてください。\n\
+            　介護される患者さんが、楽しめるような方針を出してあげてください。\n### 【ステップ3】ナレッジベース（RAG）から情報検索  \n必ずまず、**RAG（知識ベース）から該当情報を検索してください。**\n\
+            \n- 該当があれば、**ナレッジの要点を引用して出力**してください。\n- 該当がない場合は、**推論で回答しても構いませんが、その旨を明記してください。**\n\
+            \n---\n\n医師の指示：{{#1745908417534.text#}}\n本日：{{#1745912600754.text#}}\n\
+            \n【情報】RAGはコンテキスト\nRAG : {{#context#}}"
+        selected: false
+        title: LLM_介護士2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745912932533'
+      position:
+        x: 2049.0896163051543
+        y: 477.2534704797064
+      positionAbsolute:
+        x: 2049.0896163051543
+        y: 477.2534704797064
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 859ed03e-68cf-49bd-be88-5e1eb2de2dea
+          role: system
+          text: あなたは優秀な作業療法士です。あなたの運動療法は、多くの患者さんの支えになってます。
+        - id: 46c0d657-114a-4167-9520-ce560853e823
+          role: user
+          text: '定期カンファレンスは終了し、関係者の意見が出そろいました。医師の指示に沿って介護患者さんへの看護師として、今週のケア方針をまとめてください。本日の状況も含めて季節を考慮し、具体的な内容にしてください。
+
+            医師の指示：{{#1745908417534.text#}}
+
+            本日：{{#1745912600754.text#}}'
+        selected: false
+        title: LLM_作業療法士2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745913234244'
+      position:
+        x: 2044.327413090953
+        y: 244.1364034095327
+      positionAbsolute:
+        x: 2044.327413090953
+        y: 244.1364034095327
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gemini-2.0-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: a2bfafb0-b2d4-455c-b835-13e378e01c36
+          role: system
+          text: あなたは優秀なケアマネジャーです。親身になったアドバイスで患者さん、家族の皆さんに絶大な信頼を得ています。
+        - id: 9e78dbd3-150d-4285-b509-ec0fe8d109a3
+          role: user
+          text: '定期カンファレンスは終了し、関係者の意見が出そろいました。医師の指示に沿って介護患者さんへのケアマネジャーとして、今週のケア方針をまとめてください。本日の状況も含めて季節を考慮し、患者本人、家族の皆さんに安心して介護できるようなケアプランにしてくださいね。
+
+            医師の指示：{{#1745908417534.text#}}
+
+            本日：{{#1745912600754.text#}}'
+        selected: false
+        title: LLM_ケアマネ2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745913324832'
+      position:
+        x: 2049.0896163051543
+        y: 362.53412710668533
+      positionAbsolute:
+        x: 2049.0896163051543
+        y: 362.53412710668533
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1745913324832'
+          - text
+          variable: text
+        - value_selector:
+          - '1745913234244'
+          - text
+          variable: text
+        - value_selector:
+          - '1745912932533'
+          - text
+          variable: text
+        - value_selector:
+          - '1745912825775'
+          - text
+          variable: text
+        selected: false
+        title: 会議まとめ
+        type: end
+      height: 166
+      id: '1745913798333'
+      position:
+        x: 2650.825955101707
+        y: 235.13225678421287
+      positionAbsolute:
+        x: 2650.825955101707
+        y: 235.13225678421287
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        advanced_settings:
+          group_enabled: false
+          groups:
+          - groupId: 657ad001-49d9-4205-aa37-b96a449b9752
+            group_name: Group1
+            output_type: any
+            variables: []
+        desc: ''
+        output_type: string
+        selected: false
+        title: 変数集約器 2
+        type: variable-aggregator
+        variables:
+        - - '1745912825775'
+          - text
+        - - '1745912932533'
+          - text
+        - - '1745913234244'
+          - text
+        - - '1745913324832'
+          - text
+      height: 173
+      id: '1745918233281'
+      position:
+        x: 2353.779675204247
+        y: 371.64874892463376
+      positionAbsolute:
+        x: 2353.779675204247
+        y: 371.64874892463376
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - rsfJvW6Tdd2UFYgEe17SEc/HBrepsd0fLqiS1KSyuVC9JNZgUB1lr0g1Sa65h92A
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: reranking_model
+          reranking_model:
+            model: rerank-english-v3.0
+            provider: langgenius/cohere/cohere
+          top_k: 4
+        query_variable_selector:
+        - '1745975720543'
+        - text
+        retrieval_mode: multiple
+        selected: false
+        title: 知識検索
+        type: knowledge-retrieval
+      height: 90
+      id: '1745975219737'
+      position:
+        x: 736.4818610698137
+        y: 166.87401071400248
+      positionAbsolute:
+        x: 736.4818610698137
+        y: 166.87401071400248
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745906141667'
+          - patient_data
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-4o
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 621e62ec-05a8-4e23-9ff1-8bf97f58cdac
+          role: system
+          text: "あなたは介護・医療チームの一員として働くプロフェッショナルな看護師AIです。  \n目的は、利用者の状態に関する情報をもとに、「医師が的確な判断を下せるよう」、看護師の視点から整理・要約し、ナレッジまたは推論をもとに情報提供を行うことです。\n"
+        - id: c854038d-2c58-42a9-a144-e4f63bdb1304
+          role: user
+          text: '日々の生活情報から、看護師と気になる点についてRAG検索のキーワードを作成します。
+
+            日々の生活情報: {{#1745906141667.patient_data#}}'
+        selected: false
+        title: LLM 10
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1745975720543'
+      position:
+        x: 459.1776809410143
+        y: 32.59965123660774
+      positionAbsolute:
+        x: 459.1776809410143
+        y: 32.59965123660774
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - /vpxAB6PKdG6e0swFhryIVlLmHeZY7CWRsVPuqHmwJWj3pKqyow2YVP6tNRFniiu
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: rerank-english-v3.0
+            provider: langgenius/cohere/cohere
+          top_k: 4
+        query_variable_selector:
+        - '1745912729130'
+        - output
+        retrieval_mode: multiple
+        selected: false
+        title: 知識検索 2
+        type: knowledge-retrieval
+      height: 90
+      id: '1746947695275'
+      position:
+        x: 1795.9982580897636
+        y: 431.21883940909936
+      positionAbsolute:
+        x: 1795.9982580897636
+        y: 431.21883940909936
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -867.4626344320548
+      y: -34.786966505265354
+      zoom: 0.734867240140587
