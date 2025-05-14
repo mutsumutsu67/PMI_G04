@@ -2,7 +2,9 @@
 ## PMI日本支部フォーラム2025のG_04の実演データになります。
 ## Difyの使ったAI Agentのworkflowデータ：
 ## 1,Dify(workflow) :
-### 
+### 異種スタッフ間ナレッジシェア.yml
+### 異種スタッフ間ナレッジシェアrag.yml
+### DifyにDSLファイルをインポートすることで使えます。
 ## 2, 患者データ(Dummy):
 ### 患者1 : patient_data1.txt
 ### 患者2 : patient_data2.json
